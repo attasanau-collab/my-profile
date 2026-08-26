@@ -1,0 +1,140 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+  max-width: 450px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+h1 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 8px 12px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+}
+
+.info-item strong {
+  color: var(--text);
+  margin-right: 6px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- เพิ่มส่วนนี้ต่อท้ายไฟล์ style.css เดิม --- */
+
+/* เอฟเฟกต์เมื่อชี้ที่ตัวการ์ด (ให้การ์ดยกตัวขึ้นและเงาเข้มขึ้น) */
+.card {
+  /* เพิ่ม transition เพื่อให้เอฟเฟกต์ลื่นไหล */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  /* ยกตัวการ์ดขึ้น 5 พิกเซล */
+  transform: translateY(-5px);
+  /* เพิ่มความลึกของเงา */
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* เอฟเฟกต์เมื่อชี้ที่รายการข้อมูล (ให้เปลี่ยนสีพื้นหลังและขยับขวาเล็กน้อย) */
+.info-item {
+  /* เพิ่ม transition */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.info-item:hover {
+  /* เปลี่ยนสีพื้นหลังให้เข้มขึ้นเล็กน้อย */
+  background-color: #e2e8f0;
+  /* ขยับขวาไป 3 พิกเซล */
+  transform: translateX(3px);
+}
+
+/* --- ตกแต่งปุ่มสลับธีม และ Dark Mode --- */
+#theme-toggle {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  background-color: var(--primary);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#theme-toggle:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* ธีมมืด (Dark Mode) */
+body.dark-mode {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f8fafc;
+  --border: #334155;
+}
+
+body.dark-mode .info-item {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark-mode .info-item strong {
+  color: #93c5fd;
+}
+
+body.dark-mode .info-item:hover {
+  background-color: #475569;
+}
